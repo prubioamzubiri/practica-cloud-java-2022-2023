@@ -36,10 +36,10 @@ public class Persona {
 
     public void hBirthday()
     {
-        if(alive)
-        {
+        //if(alive)
+        //{
             age++;
-        }
+        //}
     }
 
     public String getId() {
