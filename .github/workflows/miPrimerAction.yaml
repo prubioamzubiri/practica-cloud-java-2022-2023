@@ -1,0 +1,9 @@
+name: Mi primer Action
+
+on: push
+
+jobs:
+  saludar:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hola, buenos días"
