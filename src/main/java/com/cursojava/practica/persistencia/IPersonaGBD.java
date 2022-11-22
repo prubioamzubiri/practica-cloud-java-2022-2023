@@ -11,11 +11,11 @@ public interface IPersonaGBD {
      */
     public Persona getPersona(String id);
 
-    public void addPersona(Persona persona);
+    public boolean addPersona(Persona persona);
 
-    public void updatePersona(Persona persona);
+    public boolean updatePersona(Persona persona);
 
-    public void removePersona(String id);
+    public boolean removePersona(String id);
     
 }
 

@@ -14,9 +14,10 @@ public class PersonaApplication implements IPersonaApplication{
 
     
     @Override
-    public void addPersona(Persona p) {
+    public boolean addPersona(Persona p) {
         
         GBD.addPersona(p);
+        return true;
         
     }
 
@@ -27,9 +28,10 @@ public class PersonaApplication implements IPersonaApplication{
     }
 
     @Override
-    public void removePersona(String id) {
+    public boolean removePersona(String id) {
         
         GBD.removePersona(id);
+        return true;
         
     }
     
