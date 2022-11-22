@@ -11,4 +11,6 @@ jobs:
       - name: Listar ficheros
         run: ls -l
       - name: Empaquetar proyecto
-        run: mvn package
+        run: mvn package -DskipTests
+      - name: Realizar los test
+        run: mvn test
