@@ -6,4 +6,5 @@ jobs:
   saludar:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hola, buenos días"
+      - name: Saluda
+        run: echo "Hola, buenos días"
