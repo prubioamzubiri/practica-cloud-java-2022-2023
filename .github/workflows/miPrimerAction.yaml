@@ -3,8 +3,10 @@ name: Mi primer Action
 on: push
 
 jobs:
-  saludar:
+  listar-ficheros:
     runs-on: ubuntu-latest
     steps:
-      - name: listar ficheros
-        run: ls
+      - name: Checkout
+        uses: actions/checkout@v2.5.0
+      - name: Listar ficheros
+        run: ls -l
