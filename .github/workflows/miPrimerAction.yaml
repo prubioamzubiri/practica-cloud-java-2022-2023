@@ -1,6 +1,10 @@
 name: Mi primer Action
 
-on: push
+on:
+  pull_request:
+    branches:
+    - main
+
 
 jobs:
   listar-ficheros:
