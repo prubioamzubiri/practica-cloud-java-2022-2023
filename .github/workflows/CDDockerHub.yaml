@@ -36,7 +36,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: prubioam/${{ github.repository }}:${{ env.RELEASE_VERSION }}
+          tags: prubioam/practica-cloud-java-2022-2023:${{ env.RELEASE_VERSION }}
 #      - name: Deploy on Heroku
 #        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
 #        with:
