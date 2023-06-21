@@ -21,7 +21,7 @@ public class Persona {
     public Persona(String id, String name, int age)
     {
         this.id=id;
-        this.age=age+1;
+        this.age=age;
         this.name=name;
         this.alive=true;
     }
