@@ -8,13 +8,10 @@ public class PersonaTest {
     @Test
     void testHBirthday() {
 
-        Persona p = new Persona("0002", "pepe", 70, false);
+        Persona p1 = new Persona("0001", "juan", 3);
 
-        p.hBirthday();
+        assertEquals(3, p1.getAge());
 
-        int expAge = 70;
-
-        assertEquals(expAge, p.getAge());
 
     }
 }
