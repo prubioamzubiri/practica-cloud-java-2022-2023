@@ -39,9 +39,9 @@ jobs:
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         with:
           host: ${{ secrets.AWS_IP }}
-          user: "ubuntu"
+          user: ubuntu
           key: ${{ secrets.AWS_KEY}}
-          first_ssh: |
+          last_ssh: |
             docker stop prueba
             docker rm prueba
             docker run -d --name prueba -p 8080:8080 prubioam/practica-cloud-java-2022-2023:${{env.RELEASE_VERSION}}
