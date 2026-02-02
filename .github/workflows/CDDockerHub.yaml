@@ -36,12 +36,14 @@ jobs:
           push: true
           tags: prubioam/practica-cloud-java-2022-2023:${{ env.RELEASE_VERSION }}
       - name: ssh
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        uses: cross-the-world/ssh-pipelines@latest
+        env:
+          WELCOME: "ssh pipeline"
         with:
           host: ${{ secrets.AWS_IP }}
           user: ubuntu
           key: ${{ secrets.AWS_KEY}}
-          last_ssh: |
+          script: |
             docker stop prueba
             docker rm prueba
             docker run -d --name prueba -p 8080:8080 prubioam/practica-cloud-java-2022-2023:${{env.RELEASE_VERSION}}
