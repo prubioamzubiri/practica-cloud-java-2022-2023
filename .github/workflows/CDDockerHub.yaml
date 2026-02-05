@@ -35,20 +35,17 @@ jobs:
           context: .
           push: true
           tags: prubioam/practica-cloud-java-2022-2023:${{ env.RELEASE_VERSION }}
-      - name: ssh
-        uses: cross-the-world/ssh-pipeline@master
+
+      - name: Run SSH/SCP Pipeline
+        uses: yitianyigexiangfa/ssh-scp-ssh-pipelines@v1.1.5
         with:
+          # --- Connection Details (from Secrets) ---
           host: ${{ secrets.AWS_IP }}
           user: ubuntu
           key: ${{ secrets.AWS_KEY}}
-          script: |
+
+          # --- Pipeline Commands ---
+          first_ssh: |
             docker stop prueba
             docker rm prueba
             docker run -d --name prueba -p 8080:8080 prubioam/practica-cloud-java-2022-2023:${{env.RELEASE_VERSION}}
-#      - name: Deploy on Heroku
-#        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-#        with:
-#          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-#          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-#          heroku_email: ${{secrets.HEROKU_EMAIL}}
-#          usedocker: true
