@@ -37,8 +37,6 @@ jobs:
           tags: prubioam/practica-cloud-java-2022-2023:${{ env.RELEASE_VERSION }}
       - name: ssh
         uses: cross-the-world/ssh-pipeline@master
-        env:
-          WELCOME: "ssh pipeline"
         with:
           host: ${{ secrets.AWS_IP }}
           user: ubuntu
